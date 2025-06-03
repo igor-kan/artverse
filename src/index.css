@@ -1,0 +1,194 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode - enhanced sophisticated palette */
+    --background: 248 250 252; /* Very light blue-gray */
+    --foreground: 15 23 42; /* Dark slate */
+
+    --card: 255 255 255; /* Pure white */
+    --card-foreground: 15 23 42;
+
+    --popover: 255 255 255;
+    --popover-foreground: 15 23 42;
+
+    --primary: 59 130 246; /* Blue-500 */
+    --primary-foreground: 255 255 255;
+
+    --secondary: 241 245 249; /* Slate-100 */
+    --secondary-foreground: 15 23 42;
+
+    --muted: 241 245 249;
+    --muted-foreground: 100 116 139; /* Slate-500 */
+
+    --accent: 139 69 19; /* Amber-700 */
+    --accent-foreground: 255 255 255;
+
+    --destructive: 239 68 68; /* Red-500 */
+    --destructive-foreground: 255 255 255;
+
+    --border: 226 232 240; /* Slate-200 */
+    --input: 226 232 240;
+    --ring: 59 130 246;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark mode - enhanced elegant palette */
+    --background: 3 7 18; /* Very dark blue */
+    --foreground: 248 250 252; /* Light blue-gray */
+
+    --card: 15 23 42; /* Dark slate */
+    --card-foreground: 248 250 252;
+
+    --popover: 15 23 42;
+    --popover-foreground: 248 250 252;
+
+    --primary: 96 165 250; /* Blue-400 */
+    --primary-foreground: 3 7 18;
+
+    --secondary: 30 41 59; /* Slate-800 */
+    --secondary-foreground: 248 250 252;
+
+    --muted: 30 41 59;
+    --muted-foreground: 148 163 184; /* Slate-400 */
+
+    --accent: 251 191 36; /* Amber-400 */
+    --accent-foreground: 3 7 18;
+
+    --destructive: 248 113 113; /* Red-400 */
+    --destructive-foreground: 3 7 18;
+
+    --border: 51 65 85; /* Slate-700 */
+    --input: 51 65 85;
+    --ring: 96 165 250;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-serif transition-colors duration-300;
+    font-family: 'Crimson Text', serif;
+    font-size: 18px; /* Increased base font size */
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold tracking-tight;
+    font-family: 'Crimson Text', serif;
+  }
+
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.75rem; }
+  h4 { font-size: 1.5rem; }
+  h5 { font-size: 1.25rem; }
+  h6 { font-size: 1.125rem; }
+
+  p, span, div, button, input, select, textarea, label {
+    @apply font-serif;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.125rem; /* Increased text size */
+  }
+
+  /* Ensure proper contrast for dropdowns and selects */
+  [data-radix-popper-content-wrapper] {
+    z-index: 50;
+  }
+  
+  [data-radix-select-content] {
+    @apply bg-popover border border-border shadow-lg;
+  }
+  
+  [data-radix-select-item] {
+    @apply text-popover-foreground;
+  }
+}
+
+@layer components {
+  .art-card {
+    @apply relative overflow-hidden bg-card rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:scale-[1.02] border border-border/50 hover:border-primary/50;
+  }
+  
+  .art-image-container {
+    @apply relative overflow-hidden rounded-t-xl;
+  }
+  
+  .art-image {
+    @apply w-full h-full object-cover transition-transform duration-500 hover:scale-105;
+  }
+  
+  .art-card-content {
+    @apply p-6 bg-card;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-serif font-bold mb-8 text-foreground;
+    font-family: 'Crimson Text', serif;
+    color: hsl(var(--accent));
+  }
+
+  .search-highlight {
+    @apply bg-primary/20 px-2 py-1 rounded text-primary-foreground font-medium;
+  }
+
+  .tag-bubble {
+    @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-serif font-medium bg-accent/90 text-accent-foreground border border-accent/40 transition-all hover:bg-accent hover:scale-105 shadow-md cursor-pointer;
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--primary)) 100%);
+  }
+
+  .filter-section {
+    @apply bg-card/90 backdrop-blur-sm border border-border rounded-xl p-6 shadow-lg;
+  }
+
+  .navbar-item {
+    @apply text-foreground hover:text-primary transition-all duration-300 font-serif font-medium relative text-lg;
+  }
+
+  .navbar-item::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .navbar-item:hover::after {
+    @apply w-full;
+  }
+
+  /* Dark mode improvements */
+  .dark {
+    color-scheme: dark;
+  }
+  
+  .light {
+    color-scheme: light;
+  }
+
+  /* Graph view specific styles */
+  .graph-container {
+    @apply bg-card border border-border rounded-xl shadow-lg overflow-hidden;
+  }
+
+  .graph-node {
+    @apply cursor-pointer transition-all duration-200;
+  }
+
+  .graph-node:hover {
+    @apply scale-110;
+  }
+
+  .graph-link {
+    @apply transition-all duration-200;
+  }
+
+  .graph-tooltip {
+    @apply bg-card border border-border rounded-lg p-3 shadow-lg text-sm;
+  }
+}
