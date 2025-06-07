@@ -1,9 +1,8 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 // Theme Provider
 import { ThemeProvider } from "./components/ThemeProvider";
@@ -31,7 +30,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <HashRouter>
           <div className="flex flex-col min-h-screen bg-background transition-colors duration-300">
             <Routes>
               <Route path="/wallpaper-app" element={<WallpaperApp />} />
@@ -55,7 +54,7 @@ const App = () => (
               } />
             </Routes>
           </div>
-        </BrowserRouter>
+        </HashRouter>
       </TooltipProvider>
     </ThemeProvider>
   </QueryClientProvider>
