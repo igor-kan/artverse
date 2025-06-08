@@ -1,6 +1,6 @@
 # ArtVerse
 
-A web platform for showcasing, sharing, and discovering digital art and creative networks.
+A web platform for showcasing, sharing, and discovering digital art and creative networks. (Updated)
 
 ## Features
 
