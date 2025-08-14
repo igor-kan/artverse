@@ -1,109 +1,160 @@
-# ArtVerse
+# artverse
 
-A web platform for showcasing, sharing, and discovering digital art and creative networks. (Updated)
+[![CI Status](https://github.com/igor-kan/artverse/workflows/CI/badge.svg)](https://github.com/igor-kan/artverse/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Last Commit](https://img.shields.io/github/last-commit/igor-kan/artverse)](https://github.com/igor-kan/artverse/commits/main)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-38B2AC)](https://tailwindcss.com/)
 
-## Features
+> Modern web application built with cutting-edge technologies
 
-- Digital art gallery and portfolio
-- Artist profiles and social features
-- Art discovery and curation tools
-- Community and collaboration spaces
+## ✨ Features
 
-## Live Demo
+- 🚀 **Next.js 15** with App Router for optimal performance
+- 💎 **TypeScript** for type safety and enhanced developer experience
+- 🎨 **Tailwind CSS** for modern, responsive design
+- ⚡ **Server-Side Rendering** for improved SEO and performance
+- 🔧 **Modern Development Tools** with ESLint, Prettier, and automated workflows
 
-Visit the live site: [https://igor-kan.github.io/artverse](https://igor-kan.github.io/artverse)
+## 🚀 Quick Start
 
-## Local Development
+### Prerequisites
 
-1. **Clone the repository:**
-    ```bash
-    git clone https://github.com/igor-kan/artverse.git
-    cd artverse
-    ```
-2. **Install dependencies:**
-    ```bash
-    npm install
-    ```
-3. **Start the development server:**
-    ```bash
-    npm run dev
-    ```
-    Open [http://localhost:8080](http://localhost:8080) in your browser.
+- Node.js 20.11.0 or later
+- npm or bun package manager
+- Git version control
 
-## Deployment to GitHub Pages
+### Installation
 
-This project is configured for deployment to GitHub Pages.
+```bash
+# Clone the repository
+git clone https://github.com/igor-kan/artverse.git
+cd artverse
 
-1. **Ensure `gh-pages` is installed as a dev dependency:**
-    ```bash
-    npm install --save-dev gh-pages
-    ```
-2. **Run the deployment script:**
-    ```bash
-    npm run deploy
-    ```
-    This will build the project, create a `dist` directory with static assets, and deploy it to the `gh-pages` branch.
+# Install dependencies
+npm install
+# or
+bun install
+```
+
+### Environment Setup
+
+1. Copy the environment template:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Update the `.env` file with your configuration
+
+### Development
+
+```bash
+# Start development server
+npm run dev
+# or
+bun dev
+```
+
+The application will be available at `http://localhost:3000` (or appropriate port).
+
+## 📋 Available Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint |
+| `npm run type-check` | Run TypeScript compiler |
+
+## 🏗️ Project Structure
+
+```
+src/
+├── components/     # Reusable UI components
+├── app/            # Next.js App Router pages
+├── lib/            # Utility functions
+├── hooks/          # Custom React hooks
+├── types/          # TypeScript type definitions
+└── styles/         # Global styles
+public/             # Static assets
+__tests__/          # Test files
+```
+
+## 🌐 Deployment
+
+### GitHub Pages
+
+```bash
+npm run deploy
+```
+
+### Docker
+
+```bash
+docker build -t artverse .
+docker run -p 3000:3000 artverse
+```
+
+## 🧪 Testing
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm run test:watch
+
+# Run tests with coverage
+npm run test:coverage
+```
+
+## 🐳 Docker Support
+
+Docker support not yet implemented.
+
+## 📄 Environment Variables
+
+See [.env.example](.env.example) for required environment variables.
+
+## 🤝 Contributing
+
+We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+
+### Development Setup
+
+1. Fork the repository
+2. Clone your fork: `git clone https://github.com/YOUR_USERNAME/artverse.git`
+3. Create a feature branch: `git checkout -b feature/amazing-feature`
+4. Install dependencies: `npm install`
+5. Make your changes and test thoroughly
+6. Commit your changes: `git commit -m 'Add amazing feature'`
+7. Push to your branch: `git push origin feature/amazing-feature`
+8. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- Built with modern development tools and best practices
+- Inspired by the open-source community
+- Thanks to all contributors and users
+
+## 📞 Support
+
+- 📧 **Email**: Available through GitHub profile
+- 🐛 **Issues**: [GitHub Issues](https://github.com/igor-kan/artverse/issues)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/igor-kan/artverse/discussions)
+
+## 🔗 Links
+
+- 🌐 **Live Demo**: https://igor-kan.github.io/artverse
+- 📚 **Documentation**: [Full Documentation](docs/)
+- 🎯 **Project Board**: [GitHub Projects](https://github.com/igor-kan/artverse/projects)
 
 ---
 
-Built with Vite, React, TypeScript, shadcn-ui, and Tailwind CSS.
-
-## Project info
-
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-You can deploy this project using your preferred deployment platform.
-
-## Can I connect a custom domain to my project?
-
-Yes, you can!
+**Made with ❤️ by [Igor Kan](https://github.com/igor-kan)**
